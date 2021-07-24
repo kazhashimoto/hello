@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/kazhashimoto/hello/issues"
   },
-  "homepage": "https://github.com/kazhashimoto/hello#readme"
+  "homepage": "https://github.com/kazhashimoto/hello#readme",
+  "dependencies": {
+    "commander": "^8.0.0",
+    "debug": "^4.3.2"
+  }
 }
