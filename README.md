@@ -37,3 +37,11 @@ hello@1.0.0 /Users/kaz_hashimoto/github/hello
 
 $
 ```
+
+package.jsonとpackage-lock.binにdependenciesが追加されているのがわかる。
+```
+"dependencies": {
+  "commander": "^8.0.0",
+  "debug": "^4.3.2"
+}
+```
