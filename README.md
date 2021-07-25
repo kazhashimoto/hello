@@ -214,3 +214,11 @@ $
 ここまでを一旦Repositoryにpushする。
 
 ## GitHubのworkflowにActionを追加
+
+(Repository画面での操作)
+Actionのテンプレートを元に、lint.ymlを作成してcommitする。
+しばらくすると、Actionが実行される。結果の詳細を確認できる。
+
+ここまでで一旦Repositoryからfetch＆pullしてローカルにも
+.github/workflows/lint.ymlを持ってきておく。
+今後、lint.ymlはGitHub画面上で編集＆commitするのが簡単。
