@@ -211,3 +211,6 @@ $ npm run lint
 > eslint bin/*.js
 $
 ```
+ここまでを一旦Repositoryにpushする。
+
+## GitHubのworkflowにActionを追加
