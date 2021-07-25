@@ -155,3 +155,20 @@ $ cd $(npm prefix -g)
 $ ls -l bin/ lib/node_modules/ | grep hello
 
 ```
+
+## eslintのインストール
+
+ローカルのhelloディレクトリを削除し、Repositoryからcloneし直す。
+プロジェクトのディレクトリhelloにcdし、eslintをローカルにインストールする。
+```
+$ npm install eslint --save-dev
+$ ./node_modules/.bin/eslint --init
+✔ How would you like to use ESLint? · problems
+✔ What type of modules does your project use? · commonjs
+✔ Which framework does your project use? · none
+✔ Does your project use TypeScript? · No / Yes
+✔ Where does your code run? · node
+✔ What format do you want your config file to be in? · JavaScript
+Successfully created .eslintrc.js file in /Users/kaz_hashimoto/github/hello
+$ 
+```
