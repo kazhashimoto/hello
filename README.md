@@ -170,5 +170,40 @@ $ ./node_modules/.bin/eslint --init
 ✔ Where does your code run? · node
 ✔ What format do you want your config file to be in? · JavaScript
 Successfully created .eslintrc.js file in /Users/kaz_hashimoto/github/hello
-$ 
+$
+$ $ npm ls
+hello@1.0.0 /Users/kaz_hashimoto/github/hello
+├── commander@8.0.0
+├── debug@4.3.2
+└── eslint@7.31.0
+
+$
+```
+
+オプション--save-devでinstallしたので、package.jsonにdevDependenciesesが追加されeslintが記録される。
+```
+"devDependencies": {
+  "eslint": "^7.31.0"
+}
+```
+
+動作を確認。
+```
+ $ ./node_modules/.bin/eslint bin/hello.js
+```
+
+package.jsonのscript項目にlintの実行を追記する。元々ある"test"の行末に「,」を付け足すのを忘れずに。
+```
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "lint": "eslint bin/*.js"
+},
+```
+
+npmコマンドから実行できることを確認。
+```
+$ npm run lint
+> hello@1.0.0 lint
+> eslint bin/*.js
+$
 ```
