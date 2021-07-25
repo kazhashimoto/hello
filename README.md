@@ -73,5 +73,59 @@ hello@1.0.0 /Users/kaz_hashimoto/github/test-package
 ├── commander@8.0.0
 └── debug@4.3.2
 
-$ 
+$
 ```
+
+```
+$ npm link
+added 1 package, and audited 3 packages in 864ms
+
+found 0 vulnerabilities
+$
+```
+
+```
+$ cd $(npm prefix -g)
+$ pwd
+/Users/kaz_hashimoto/.nodebrew/node/v16.4.0
+$
+$ ls -l bin/ lib/node_modules/ | grep hello
+lrwxr-xr-x  1 kaz_hashimoto  staff        38  7 25 09:31 hello -> ../lib/node_modules/hello/bin/hello.js
+lrwxr-xr-x   1 kaz_hashimoto  staff   34  7 25 09:31 hello -> ../../../../../github/test-package
+$
+```
+
+```
+$ npm ls -g
+/Users/kaz_hashimoto/.nodebrew/node/v16.4.0/lib
+├── analyze-css@1.0.0
+├── hello@1.0.0 -> ./../../../../github/test-package
+└── npm@7.18.1
+
+$
+```
+
+```
+$ pwd
+/Users/kaz_hashimoto
+$ hello
+/Users/kaz_hashimoto/.nodebrew/current/bin/hello: line 1: syntax error near unexpected token `('
+/Users/kaz_hashimoto/.nodebrew/current/bin/hello: line 1: `const { program } = require("commander");'
+$
+```
+
+hello.jsの１行目に以下を追加
+```
+#!/usr/bin/env node
+```
+
+```
+$ hello
+hello, world!
+$
+$ hello -u
+HELLO, WORLD!
+$
+```
+
+hello.jsを修正したのでRepositoryにpushしておく。
