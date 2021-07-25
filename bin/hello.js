@@ -19,5 +19,3 @@ if (options.upper) {
   greeting_msg = greeting_msg.toUpperCase();
 }
 console.log(greeting_msg);
-
-x = 1;
