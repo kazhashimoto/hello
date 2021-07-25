@@ -56,9 +56,13 @@ package.jsonとpackage-lock.binにdependenciesが追加されているのがわ�
 ここまでをRepositoryに一旦push
 
 ## npmパッケージの作成準備
-
+テスト用のディレクトリを作り、そこにRepositoryからhelloのプロジェクト一式をcloneする。
 ```
 $ mkdir test-package
+```
+
+このままではrequireしたpackageがまだローカルにインストールされていないので、npm installして./node_modulesにダウンロードさせる。
+```
 $ cd test-package/
 $ npm install
 ```
@@ -76,6 +80,7 @@ hello@1.0.0 /Users/kaz_hashimoto/github/test-package
 $
 ```
 
+hello packageをglobalに見かけ上インストールするため、npm linkを実行してtest-packageへのシンボリックリンクを作成する。
 ```
 $ npm link
 added 1 package, and audited 3 packages in 864ms
@@ -83,7 +88,7 @@ added 1 package, and audited 3 packages in 864ms
 found 0 vulnerabilities
 $
 ```
-
+nodeの{prefix}/binと{prefix}/libにシンボリックリンクが作られているのがわかる。
 ```
 $ cd $(npm prefix -g)
 $ pwd
@@ -95,6 +100,7 @@ lrwxr-xr-x   1 kaz_hashimoto  staff   34  7 25 09:31 hello -> ../../../../../git
 $
 ```
 
+globalにインストールされているのがわかる。
 ```
 $ npm ls -g
 /Users/kaz_hashimoto/.nodebrew/node/v16.4.0/lib
@@ -105,6 +111,7 @@ $ npm ls -g
 $
 ```
 
+どこか他のディレクトリでhelloを実行してみる。
 ```
 $ pwd
 /Users/kaz_hashimoto
@@ -129,3 +136,22 @@ $
 ```
 
 hello.jsを修正したのでRepositoryにpushしておく。
+
+uninstall -gでシンボリックリンクを削除する。
+
+```
+$ npm uninstall -g hello
+removed 1 package, and audited 1 package in 229ms
+```
+globalから削除され、シンボリックリンクも消えたのを確認。
+
+```
+$ npm ls -g
+/Users/kaz_hashimoto/.nodebrew/node/v16.4.0/lib
+├── analyze-css@1.0.0
+└── npm@7.18.1
+
+$ cd $(npm prefix -g)
+$ ls -l bin/ lib/node_modules/ | grep hello
+
+```
