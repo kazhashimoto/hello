@@ -1,5 +1,9 @@
 # hello
 
+## Repositoryの作成とclone
+（省略）
+
+## cloneしたディレクトリで作業
 ```
 $ cd hello
 $ npm init -y
@@ -12,19 +16,22 @@ package.jsonを編集　（binとlicense)
 },
 ```
 
+.gitignoreにnode_modules/を追加
 ```
 $ touch .gitignore
 ```
 
-.gitignoreにnode_modules/を追加
+以下の行を追加
 ```
 node_modules/
 ```
 
+hello.jsがrequireしているパッケージをローカルにinstall
 ```
 $ npm install commander debug
 ```
 
+プロジェクトのディレクトリにnode_modulesが作られる。
 ```
 $ ls
 LICENSE			bin			package-lock.json
@@ -45,3 +52,7 @@ package.jsonとpackage-lock.binにdependenciesが追加されているのがわ�
   "debug": "^4.3.2"
 }
 ```
+
+ここまでをRepositoryに一旦push
+
+## npmパッケージの作成準備
