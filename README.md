@@ -162,6 +162,10 @@ $ ls -l bin/ lib/node_modules/ | grep hello
 プロジェクトのディレクトリhelloにcdし、eslintをローカルにインストールする。
 ```
 $ npm install eslint --save-dev
+```
+
+--initオプションを付けてeslintを実行し、いくつかの質問に答えていくと、最後に.eslintrc.jsファイルがプロジェクトのディレクトリ直下に生成される。
+```
 $ ./node_modules/.bin/eslint --init
 ✔ How would you like to use ESLint? · problems
 ✔ What type of modules does your project use? · commonjs
