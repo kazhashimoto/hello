@@ -56,3 +56,22 @@ package.jsonとpackage-lock.binにdependenciesが追加されているのがわ�
 ここまでをRepositoryに一旦push
 
 ## npmパッケージの作成準備
+
+```
+$ mkdir test-package
+$ cd test-package/
+$ npm install
+```
+
+```
+$ ls
+LICENSE			bin			package-lock.json
+README.md		node_modules		package.json
+$
+$ npm ls
+hello@1.0.0 /Users/kaz_hashimoto/github/test-package
+├── commander@8.0.0
+└── debug@4.3.2
+
+$ 
+```
