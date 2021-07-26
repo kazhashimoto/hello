@@ -1,5 +1,5 @@
 {
-  "name": "hello",
+  "name": "@kazhashimoto/hello",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -29,6 +29,6 @@
     "eslint": "^7.31.0"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
-  },
+    "registry": "https://npm.pkg.github.com"
+  }
 }
