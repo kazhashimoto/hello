@@ -222,3 +222,53 @@ Actionのテンプレートを元に、lint.ymlを作成してcommitする。
 ここまでで一旦Repositoryからfetch＆pullしてローカルにも
 .github/workflows/lint.ymlを持ってきておく。
 今後、lint.ymlはGitHub画面上で編集＆commitするのが簡単。
+
+
+## GitHub Packagesへの登録
+PATを生成しておく。
+repoとwrite:packagesをONにしてUpdate token。
+Generate new tokenをクリック。表示されたtokenをメモる。
+
+```
+$ cd hello
+$ npm login --scope=@kazhashimoto --registry=https://npm.pkg.github.com
+
+> Username: kazhashimoto
+> Password: TOKEN
+> Email: (email address)
+```
+
+~/.npmrcファイルが作られ、次の行が追加される。
+```
+//npm.pkg.github.com/:_authToken=TOKEN
+```
+
+package.jsonにpublishConfig項目を追加する。
+```
+"publishConfig": {
+  "registry": "https://npm.pkg.github.com"
+}
+```
+
+nameをscopeの形式にしておく。
+```
+"name": "@kazhashimoto/hello",
+```
+
+```
+$ touch .npmignore
+```
+パッケージに含めないフォルダやファイル名を指定しておく。
+
+```
+node_modules/
+.github/
+```
+ここまでをRepositoryに一旦push。
+
+GitHub Packagesに登録
+```
+$ npm publish
+```
+
+しばらくすると、Repositoryのページ右側のPackages欄にhelloパッケージが表示される。
