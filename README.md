@@ -272,3 +272,37 @@ $ npm publish
 ```
 
 しばらくすると、Repositoryのページ右側のPackages欄にhelloパッケージが表示される。
+
+## helloパッケージのインストール
+
+```
+$ mkdir test-package
+$ cd test-package/
+$ npm init -y
+$ touch .npmrc
+```
+
+.npmrcに以下の行を記述。
+```
+@kazhashimoto:registry=https://npm.pkg.github.com
+```
+
+globalにインストール
+```
+$ npm install -g @kazhashimoto/hello@1.0.0
+```
+
+```
+$ npm ls -g
+/Users/kaz_hashimoto/.nodebrew/node/v16.4.0/lib
+├── @kazhashimoto/hello@1.0.0
+├── analyze-css@1.0.0
+└── npm@7.18.1
+
+$
+```
+
+アンインストール
+```
+$ npm uninstall -g @kazhashimoto/hello
+```
