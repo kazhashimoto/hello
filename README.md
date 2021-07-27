@@ -1,4 +1,6 @@
 # hello
+helloはターミナルに"hello world"を表示するコマンドラインプログラムです。Node.jsがインストールされた環境で実行できます。
+このRepositoryは、hello.jsからnpmパッケージを作成しGitHub Packagesに登録するまでのサンプルです。
 
 ## Repositoryの作成とclone
 （省略）
