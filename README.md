@@ -306,3 +306,19 @@ $
 ```
 $ npm uninstall -g @kazhashimoto/hello
 ```
+
+## パッケージをGitHub Packagesに登録するworkflowを設定する
+リリースが作成された時にパッケージをGitHub Packagesに登録するworkflowの作り方。
+
+RepositoryのActionsタブ > New workflow > set up a workflow yourselfでエディタを開き、
+[Publishing packages to GitHub Packages](https://docs.github.com/en/actions/guides/publishing-nodejs-packages#publishing-packages-to-github-packages)
+のExample workflowのコードをコピペする。
+`node-version`の値を対象バージョンに書き換え、`scope`の値を自分のGitHubアカウント名に書き換える。
+```
+node-version: 16
+
+scope: '@kazhashimoto'
+```
+ファイル名をpublish.ymlなどにしてcommitする。
+今後、新しいReleaseを作成する度にpublish.ymlのworkflowが実行されて、そのバージョンでのパッケージがGitHub Packagesに登録される。
+新しいReleaseを作成する前に、package.jsonで`version`の値を上げてpushしておく必要がある。
