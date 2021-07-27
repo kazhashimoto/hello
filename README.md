@@ -95,8 +95,8 @@ $ pwd
 /Users/me/.nodebrew/node/v16.4.0
 $
 $ ls -l bin/ lib/node_modules/ | grep hello
-lrwxr-xr-x  1 me  staff        38  7 25 09:31 hello -> ../lib/node_modules/hello/bin/hello.js
-lrwxr-xr-x   1 me  staff   34  7 25 09:31 hello -> ../../../../../github/test-package
+lrwxr-xr-x  1 me  staff   38  7 25 09:31 hello -> ../lib/node_modules/hello/bin/hello.js
+lrwxr-xr-x  1 me  staff   34  7 25 09:31 hello -> ../../../../../github/test-package
 $
 ```
 
