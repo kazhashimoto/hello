@@ -38,7 +38,7 @@ LICENSE			bin			package-lock.json
 README.md		node_modules		package.json
 $
 $ npm ls
-hello@1.0.0 /Users/<i>kaz_hashimoto</i>/github/hello
+hello@1.0.0 /Users/kaz_hashimoto/github/hello
 ├── commander@8.0.0
 └── debug@4.3.2
 
