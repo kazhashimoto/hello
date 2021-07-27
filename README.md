@@ -32,7 +32,8 @@ $ npm install commander debug
 ```
 
 プロジェクトのディレクトリにnode_modulesが作られる。
-<pre><code class="language-shell">$ ls
+```
+$ ls
 LICENSE			bin			package-lock.json
 README.md		node_modules		package.json
 $
@@ -42,7 +43,7 @@ hello@1.0.0 /Users/<i>kaz_hashimoto</i>/github/hello
 └── debug@4.3.2
 
 $
-</code></pre>
+```
 
 package.jsonとpackage-lock.binにdependenciesが追加されているのがわかる。
 ```
