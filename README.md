@@ -38,7 +38,7 @@ LICENSE			bin			package-lock.json
 README.md		node_modules		package.json
 $
 $ npm ls
-hello@1.0.0 /Users/kaz_hashimoto/github/hello
+hello@1.0.0 /Users/me/github/hello
 ├── commander@8.0.0
 └── debug@4.3.2
 
@@ -73,7 +73,7 @@ LICENSE			bin			package-lock.json
 README.md		node_modules		package.json
 $
 $ npm ls
-hello@1.0.0 /Users/kaz_hashimoto/github/test-package
+hello@1.0.0 /Users/me/github/test-package
 ├── commander@8.0.0
 └── debug@4.3.2
 
@@ -92,18 +92,18 @@ nodeの{prefix}/binと{prefix}/libにシンボリックリンクが作られて�
 ```
 $ cd $(npm prefix -g)
 $ pwd
-/Users/kaz_hashimoto/.nodebrew/node/v16.4.0
+/Users/me/.nodebrew/node/v16.4.0
 $
 $ ls -l bin/ lib/node_modules/ | grep hello
-lrwxr-xr-x  1 kaz_hashimoto  staff        38  7 25 09:31 hello -> ../lib/node_modules/hello/bin/hello.js
-lrwxr-xr-x   1 kaz_hashimoto  staff   34  7 25 09:31 hello -> ../../../../../github/test-package
+lrwxr-xr-x  1 me  staff        38  7 25 09:31 hello -> ../lib/node_modules/hello/bin/hello.js
+lrwxr-xr-x   1 me  staff   34  7 25 09:31 hello -> ../../../../../github/test-package
 $
 ```
 
 globalにインストールされているのがわかる。
 ```
 $ npm ls -g
-/Users/kaz_hashimoto/.nodebrew/node/v16.4.0/lib
+/Users/me/.nodebrew/node/v16.4.0/lib
 ├── analyze-css@1.0.0
 ├── hello@1.0.0 -> ./../../../../github/test-package
 └── npm@7.18.1
@@ -114,10 +114,10 @@ $
 どこか他のディレクトリでhelloを実行してみる。
 ```
 $ pwd
-/Users/kaz_hashimoto
+/Users/me
 $ hello
-/Users/kaz_hashimoto/.nodebrew/current/bin/hello: line 1: syntax error near unexpected token `('
-/Users/kaz_hashimoto/.nodebrew/current/bin/hello: line 1: `const { program } = require("commander");'
+/Users/me/.nodebrew/current/bin/hello: line 1: syntax error near unexpected token `('
+/Users/me/.nodebrew/current/bin/hello: line 1: `const { program } = require("commander");'
 $
 ```
 
@@ -147,7 +147,7 @@ globalから削除され、シンボリックリンクも消えたのを確認�
 
 ```
 $ npm ls -g
-/Users/kaz_hashimoto/.nodebrew/node/v16.4.0/lib
+/Users/me/.nodebrew/node/v16.4.0/lib
 ├── analyze-css@1.0.0
 └── npm@7.18.1
 
@@ -173,10 +173,10 @@ $ ./node_modules/.bin/eslint --init
 ✔ Does your project use TypeScript? · No / Yes
 ✔ Where does your code run? · node
 ✔ What format do you want your config file to be in? · JavaScript
-Successfully created .eslintrc.js file in /Users/kaz_hashimoto/github/hello
+Successfully created .eslintrc.js file in /Users/me/github/hello
 $
 $ $ npm ls
-hello@1.0.0 /Users/kaz_hashimoto/github/hello
+hello@1.0.0 /Users/me/github/hello
 ├── commander@8.0.0
 ├── debug@4.3.2
 └── eslint@7.31.0
@@ -294,7 +294,7 @@ $ npm install -g @kazhashimoto/hello@1.0.0
 
 ```
 $ npm ls -g
-/Users/kaz_hashimoto/.nodebrew/node/v16.4.0/lib
+/Users/me/.nodebrew/node/v16.4.0/lib
 ├── @kazhashimoto/hello@1.0.0
 ├── analyze-css@1.0.0
 └── npm@7.18.1
