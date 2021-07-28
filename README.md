@@ -7,13 +7,19 @@ helloはターミナルに"hello, world!"を表示する、Node.jsを使った�
 - エディタ: Atom v1.58
 - macOS Big Sur 11.5
 
-目次
-- []
+**目次**
+- リポジトリの作成
+- 最初のnpmパッケージを作る
+- パッケージのinstallテスト
+- eslintをworkflowに組み込む
+- GitHub Packagesにnpmパッケージとして登録する
+- GitHub Packagesへの登録をworkflowに組み込む
 
-## Repositoryの作成とclone
-（省略）
+## 手順
+### リポジトリの作成
+TBD
 
-## cloneしたディレクトリで作業
+### 最初のnpmパッケージを作る
 ```
 $ cd hello
 $ npm init -y
@@ -65,7 +71,7 @@ package.jsonとpackage-lock.binにdependenciesが追加されているのがわ�
 
 ここまでをRepositoryに一旦push
 
-## npmパッケージの作成準備
+### パッケージのinstallテスト
 テスト用のディレクトリを作り、そこにRepositoryからhelloのプロジェクト一式をcloneする。
 ```
 $ mkdir test-package
@@ -166,7 +172,7 @@ $ ls -l bin/ lib/node_modules/ | grep hello
 
 ```
 
-## eslintのインストール
+### eslintをworkflowに組み込む
 
 ローカルのhelloディレクトリを削除し、Repositoryからcloneし直す。
 プロジェクトのディレクトリhelloにcdし、eslintをローカルにインストールする。
@@ -223,7 +229,7 @@ $
 ```
 ここまでを一旦Repositoryにpushする。
 
-## GitHubのworkflowにActionを追加
+### GitHubのworkflowにActionを追加
 
 (Repository画面での操作)
 Actionのテンプレートを元に、lint.ymlを作成してcommitする。
@@ -234,7 +240,7 @@ Actionのテンプレートを元に、lint.ymlを作成してcommitする。
 今後、lint.ymlはGitHub画面上で編集＆commitするのが簡単。
 
 
-## GitHub Packagesへの登録
+### GitHub Packagesにnpmパッケージとして登録する
 PATを生成しておく。
 repoとwrite:packagesをONにしてUpdate token。
 Generate new tokenをクリック。表示されたtokenをメモる。
@@ -283,7 +289,7 @@ $ npm publish
 
 しばらくすると、Repositoryのページ右側のPackages欄にhelloパッケージが表示される。
 
-## helloパッケージのインストール
+### GitHub Packagesからのインストールテスト
 
 ```
 $ mkdir test-package
@@ -317,7 +323,7 @@ $
 $ npm uninstall -g @kazhashimoto/hello
 ```
 
-## パッケージをGitHub Packagesに登録するworkflowを設定する
+### GitHub Packagesへの登録をworkflowに組み込む
 リリースが作成された時にパッケージをGitHub Packagesに登録するworkflowの作り方。
 
 RepositoryのActionsタブ > New workflow > set up a workflow yourselfでエディタを開き、
