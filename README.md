@@ -21,18 +21,24 @@ helloはターミナルに"hello, world!"を表示する、Node.jsを使った�
 - Add a README file
 - Choose a license
 
-にチェックを入れてRepositoryで作成します。これにより、default branchの名前が`main`に設定されるため、この後の作業(Atomとの連携)がやりやすくなるます。
+にチェックを入れてRepositoryで作成します。これにより、default branchの名前が`main`に設定されるため、この後の作業(Atomとの連携)がやりやすくなります。
 本記事では
-- リポジトリ名を"hello"
-- リポジトリの所有者を筆者のアカウント @kazhashimoto
-- ローカルのホームディレクトリを /Users/me/
-- nodeのインストール先ディレクトリのパスを /Users/me/.nodebrew/node/v16.4.0
+- リポジトリ名: "hello"
+- リポジトリの所有者: 筆者のGitHubアカウント @kazhashimoto
+- リポジトリのURL: https://github.com/kazhashimoto/hello.git
+- ローカルのホームディレクトリ: /Users/me/
+- ローカルのclone先のディレクトリ: /Users/me/github/
+- nodeのインストール先ディレクトリのパス: /Users/me/.nodebrew/node/v16.4.0
 
 として説明します。
 
 ### 最初のnpmパッケージを作る
+Atomエディタを起動し、ローカルにリポジトリをcloneします。
+ - Shift + Command + Pでコマンドパレットを開き、`GitHub: Clone`を選択。
+ - Clone fromにリポジトリのURLを入力
+
 ```
-$ cd hello
+$ cd /Users/me/github/hello
 $ npm init -y
 ```
 
