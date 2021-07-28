@@ -1,6 +1,14 @@
 # hello
 helloはターミナルに"hello, world!"を表示する、Node.jsを使ったコマンドラインのJavaScriptプログラムです。
-このRepositoryは、簡単なhello.jsを題材に、npmパッケージの作成からGitHub Packagesへ登録するまでの手順を理解するために作った練習用のリソースです。
+このRepositoryは、npmパッケージの作成からGitHub Packagesへ登録するまでの手順を理解するために作った練習用のリソースです。
+
+**実行環境**
+- Node.js v16.4.0
+- エディタ: Atom v1.58
+- macOS Big Sur 11.5
+
+目次
+- []
 
 ## Repositoryの作成とclone
 （省略）
