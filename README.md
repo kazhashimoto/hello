@@ -21,12 +21,14 @@ helloはターミナルに"hello, world!"を表示する、Node.jsを使った�
 - Add a README file
 - Choose a license
 
-にチェックを入れてRepositoryで作成する。これにより、default branchの名前が`main`に設定されるため、この後の作業(Atomとの連携)がやりやすくなる。
+にチェックを入れてRepositoryで作成します。これにより、default branchの名前が`main`に設定されるため、この後の作業(Atomとの連携)がやりやすくなるます。
 本記事では
 - リポジトリ名を"hello"
 - リポジトリの所有者を筆者のアカウント @kazhashimoto
 - ローカルのホームディレクトリを /Users/me/
-として説明する。
+- nodeのインストール先ディレクトリのパスを /Users/me/.nodebrew/node/v16.4.0
+
+として説明します。
 
 ### 最初のnpmパッケージを作る
 ```
