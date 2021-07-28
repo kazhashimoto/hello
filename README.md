@@ -8,16 +8,25 @@ helloはターミナルに"hello, world!"を表示する、Node.jsを使った�
 - macOS Big Sur 11.5
 
 **目次**
-- リポジトリの作成
-- 最初のnpmパッケージを作る
-- パッケージのinstallテスト
-- eslintをworkflowに組み込む
-- GitHub Packagesにnpmパッケージとして登録する
-- GitHub Packagesへの登録をworkflowに組み込む
+- [リポジトリの作成](https://github.com/kazhashimoto/hello#%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%AE%E4%BD%9C%E6%88%90)
+- [最初のnpmパッケージを作る](https://github.com/kazhashimoto/hello#%E6%9C%80%E5%88%9D%E3%81%AEnpm%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%92%E4%BD%9C%E3%82%8B)
+- [パッケージのinstallテスト](https://github.com/kazhashimoto/hello#%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AEinstall%E3%83%86%E3%82%B9%E3%83%88)
+- [eslintをworkflowに組み込む](https://github.com/kazhashimoto/hello#eslint%E3%82%92workflow%E3%81%AB%E7%B5%84%E3%81%BF%E8%BE%BC%E3%82%80)
+- [GitHub Packagesにnpmパッケージとして登録する](https://github.com/kazhashimoto/hello#github%E3%81%AEworkflow%E3%81%ABaction%E3%82%92%E8%BF%BD%E5%8A%A0)
+- [GitHub Packagesへの登録をworkflowに組み込む](https://github.com/kazhashimoto/hello#github-packages%E3%81%B8%E3%81%AE%E7%99%BB%E9%8C%B2%E3%82%92workflow%E3%81%AB%E7%B5%84%E3%81%BF%E8%BE%BC%E3%82%80)
 
 ## 手順
 ### リポジトリの作成
-TBD
+[Create a new repository](https://github.com/new)画面で、Initialize this repository withの
+- Add a README file
+- Choose a license
+
+にチェックを入れてRepositoryで作成する。これにより、default branchの名前が`main`に設定されるため、この後の作業(Atomとの連携)がやりやすくなる。
+本記事では
+- リポジトリ名を"hello"
+- リポジトリの所有者を筆者のアカウント @kazhashimoto
+- ローカルのホームディレクトリを /Users/me/
+として説明する。
 
 ### 最初のnpmパッケージを作る
 ```
