@@ -201,12 +201,11 @@ $ ./node_modules/.bin/eslint --init
 ✔ What format do you want your config file to be in? · JavaScript
 Successfully created .eslintrc.js file in /Users/me/github/hello
 $
-$ $ npm ls
+$ npm ls
 hello@1.0.0 /Users/me/github/hello
 ├── commander@8.0.0
 ├── debug@4.3.2
 └── eslint@7.31.0
-
 $
 ```
 
