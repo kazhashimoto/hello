@@ -42,29 +42,29 @@ $ cd /Users/me/github/hello
 $ npm init -y
 ```
 
-package.jsonを編集　（binとlicense)
+package.jsonの`bin`のパス名を修正します。そのほか`license`項目を適宜修正します。
 ```
 "bin": {
   "hello": "bin/hello.js"
 },
 ```
 
-.gitignoreにnode_modules/を追加
+.gitignoreを作り、node_modules/を追加します。
 ```
 $ touch .gitignore
 ```
 
-以下の行を追加
+追加する行。
 ```
 node_modules/
 ```
 
-hello.jsがrequireしているパッケージをローカルにinstall
+hello.jsがrequireしているパッケージをローカルにinstallします。
 ```
 $ npm install commander debug
 ```
 
-プロジェクトのディレクトリにnode_modulesが作られる。
+その結果、プロジェクトのディレクトリにnode_modulesが作られ、
 ```
 $ ls
 LICENSE			bin			package-lock.json
@@ -78,7 +78,7 @@ hello@1.0.0 /Users/me/github/hello
 $
 ```
 
-package.jsonとpackage-lock.binにdependenciesが追加されているのがわかる。
+package.jsonとpackage-lock.binにdependenciesが追加されているのがわかります。
 ```
 "dependencies": {
   "commander": "^8.0.0",
@@ -86,15 +86,15 @@ package.jsonとpackage-lock.binにdependenciesが追加されているのがわ�
 }
 ```
 
-ここまでをRepositoryに一旦push
+ここまでの状態でファイルをリポジトリに一旦pushします。
 
 ### パッケージのinstallテスト
-テスト用のディレクトリを作り、そこにRepositoryからhelloのプロジェクト一式をcloneする。
+npmを使ってローカルの環境にインストールできるか確認します。まず、テスト用のディレクトリを作り、そこにリポジトリからhelloのプロジェクト一式をcloneします。
 ```
 $ mkdir test-package
 ```
 
-このままではrequireしたpackageがまだローカルにインストールされていないので、npm installして./node_modulesにダウンロードさせる。
+このままではhello.jsがrequireしているパッケージがまだローカルにインストールされていないので、npm installして./node_modulesにダウンロードさせます。
 ```
 $ cd test-package/
 $ npm install
@@ -109,19 +109,16 @@ $ npm ls
 hello@1.0.0 /Users/me/github/test-package
 ├── commander@8.0.0
 └── debug@4.3.2
-
 $
 ```
 
-hello packageをglobalに見かけ上インストールするため、npm linkを実行してtest-packageへのシンボリックリンクを作成する。
+手元のtest-packageディレクトリにあるhelloのリソースをglobalにインストールした状態にする簡単な方法は、npm linkを実行してtest-packageへのシンボリックリンクを作成することです。
 ```
 $ npm link
 added 1 package, and audited 3 packages in 864ms
-
-found 0 vulnerabilities
 $
 ```
-nodeの{prefix}/binと{prefix}/libにシンボリックリンクが作られているのがわかる。
+nodeの{prefix}/binと{prefix}/libにシンボリックリンクが作られているのがわかります。
 ```
 $ cd $(npm prefix -g)
 $ pwd
@@ -133,18 +130,17 @@ lrwxr-xr-x  1 me  staff   34  7 25 09:31 hello -> ../../../../../github/test-pac
 $
 ```
 
-globalにインストールされているのがわかる。
+globalにインストールされているのもわかります。
 ```
 $ npm ls -g
 /Users/me/.nodebrew/node/v16.4.0/lib
 ├── analyze-css@1.0.0
 ├── hello@1.0.0 -> ./../../../../github/test-package
 └── npm@7.18.1
-
 $
 ```
 
-どこか他のディレクトリでhelloを実行してみる。
+別のディレクトリに移ってhelloを実行してみます。
 ```
 $ pwd
 /Users/me
@@ -154,29 +150,26 @@ $ hello
 $
 ```
 
-hello.jsの１行目に以下を追加
+このエラーは実行時のインタプリタが指定されていないためです。hello.jsの１行目に以下を追加します。
 ```
 #!/usr/bin/env node
 ```
 
+実行できました。
 ```
 $ hello
 hello, world!
-$
-$ hello -u
-HELLO, WORLD!
-$
 ```
 
-hello.jsを修正したのでRepositoryにpushしておく。
+ここまでの修正をリポジトリにpushしておきます。
 
-uninstall -gでシンボリックリンクを削除する。
+シンボリックリンクで作成したglobalのパッケージを削除するには、普通にuninstall -gを実行します。
 
 ```
 $ npm uninstall -g hello
 removed 1 package, and audited 1 package in 229ms
 ```
-globalから削除され、シンボリックリンクも消えたのを確認。
+globalから削除され、シンボリックリンクも消えているのがわかります。
 
 ```
 $ npm ls -g
@@ -186,7 +179,7 @@ $ npm ls -g
 
 $ cd $(npm prefix -g)
 $ ls -l bin/ lib/node_modules/ | grep hello
-
+$
 ```
 
 ### eslintをworkflowに組み込む
