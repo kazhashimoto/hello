@@ -36,3 +36,9 @@ hello, world!
 $ hello -u
 HELLO, WORLD!
 ```
+
+### Turning on debug mode
+
+```
+$ DEBUG=* hello -u
+```
