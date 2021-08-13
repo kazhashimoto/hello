@@ -1,7 +1,7 @@
 # hello
 helloはターミナルに"hello, world!"を表示する、Node.jsを使ったコマンドラインのJavaScriptプログラムです。
 このRepositoryは、npmパッケージの作成からGitHub Packagesへ登録するまでの手順を試すための練習用のリソースです。
-詳細は、https://qiita.com/kazhashimoto
+詳細は、https://qiita.com/kazhashimoto/items/aedd7d6dae1aca80a814
 
 ## Installation
 
